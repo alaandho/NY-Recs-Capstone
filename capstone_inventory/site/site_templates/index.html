@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Flash message -->
+{% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+        {% for cat, msg in messages %}
+            {% if cat == 'auth-success' %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ msg }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+        {% endfor %}    
+    {% endif %}
+{% endwith %}
+
+
+
+<h1>new york recommendations by your local tastemaker</h1>
+<h2>find the best the city has to offer, curated by the community</h2>
+
+
+
+
+<!-- Side Nav  -->
+<div class = 'row' style="display:flex; justify-content:flex-end">
+    <div class = 'side-nav col'>
+        <div class = "side-nav-items" >
+            <a href="{{ url_for('site.home', cat = 'Restaurant') }}">Restaurants</a>
+            <a href="{{ url_for('site.home', cat = 'Bars') }}">Bars</a>
+            <a href="{{ url_for('site.home', cat = 'Cafes') }}">Cafes</a>
+            <a href="{{ url_for('site.home', cat = 'Retail') }}">Retail</a>
+        </div>
+    </div>
+    <!-- Yelp cards  -->
+    {% for r in recommendations %}
+        
+        {% if r.category.lower() == "restaurant" %}
+        <!-- <p>{{r.image_url}}</p> -->
+            <div class="card col-sm-4" style="width: 15rem">
+                <!-- <img class="card-img-top" src="{{'(https://unsplash.com/286x180/?food)'}}" alt="Card image cap"> -->
+                <div class="card-body">
+                    <h4 class="card-title">{{r.name}}</h4>
+                    <p class="card-text">{{r.category}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{r.location}}</li>
+                    <li class="list-group-item">{{r.phone}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href={{r.url}} class="card-link">{{r.url}}</a>
+                </div>
+            </div>
+        {% endif %}
+        
+        {% if r.category.lower() == "bars" %}
+            <div class="card col-sm-4" style="width: 15rem">
+                <div class="card-body">
+                    <h4 class="card-title">{{r.name}}</h4>
+                    <p class="card-text">{{r.category}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{r.location}}</li>
+                    <li class="list-group-item">{{r.phone}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href={{r.url}} class="card-link">{{r.url}}</a>
+                </div>
+            </div>
+        {% endif %}
+        
+        {% if r.category.lower() == "cafes" %}
+            <div class="card col-sm-4" style="width: 15rem">
+                <div class="card-body">
+                    <h4 class="card-title">{{r.name}}</h4>
+                    <p class="card-text">{{r.category}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{r.location}}</li>
+                    <li class="list-group-item">{{r.phone}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href={{r.url}} class="card-link">{{r.url}}</a>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if r.category.lower() == "retail" %}
+            <div class="card col-sm-4" style="width: 15rem">
+                <div class="card-body">
+                    <h4 class="card-title">{{r.name}}</h4>
+                    <p class="card-text">{{r.category}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{r.location}}</li>
+                    <li class="list-group-item">{{r.phone}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href={{r.url}} class="card-link">{{r.url}}</a>
+                </div>
+            </div>
+        {% endif %}
+        
+    {% endfor %}   
+    
+</div>
+
+
+
+
+
+
+
+
+{% endblock content %}
+

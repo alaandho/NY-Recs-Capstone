@@ -1,0 +1,144 @@
+body {
+    margin: auto;
+    background: white;
+    background-size: cover;
+    background-position: 30% 30%;
+    background-attachment: fixed;
+    width: 85%;
+    text-transform: lowercase;
+
+}
+
+/* Top Nav */
+.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link {
+    color: black;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    color: black;
+    font-size: 17px;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #ff7e00;
+    
+}
+
+.nav.navbar-nav.navbar-right:hover {
+    color: #f00359;
+}
+
+
+/* Side Nav */
+.side-nav {
+    height: 100%;
+    max-width: 60%;
+    position: fixed;
+    text-decoration: none;
+    left: 0;
+    margin-left: 5.5em;
+    margin-right: 5em;
+}
+
+.side-nav-items a{
+    padding: 6px 8px 6px 16px;
+    padding-left: 2px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+}
+
+
+.side-nav-items a:hover {
+    color: #f003f9;
+}
+
+
+/* header */
+h1 {
+    color:black;
+    position: fixed;
+    padding-top: 10px;
+    width: 100%
+}
+
+h2 {
+    position: fixed;
+    padding-top: 60px;
+    font-size: medium;
+    font-style: italic;
+    width: 100%
+}
+
+
+.profile-container {
+    color:black;
+}
+
+.col-sm-4 {
+    padding-left: 15em;
+    width: 10%;
+}
+
+.card {
+    /* flex-wrap: wrap; */
+    color: black; 
+    padding: 0.5em;
+    margin: 0.5em;
+    border-width: 1px;
+    right: 0;
+    height: 310px;
+}
+
+.card:hover {
+    background-color: #eeff1b;
+    border-color: #ff6700;
+    color: #a020f0
+}
+
+.row {
+    padding-top: 120px;
+}
+
+.list-group-item {
+    max-width: 18rem;
+    color:black; 
+    background: rgba(0, 0, 0, 0.0);
+    text-transform: capitalize;
+    border: white;
+}
+
+.card-body {
+    max-width: 15rem;
+    border: white;
+}
+
+p.card-text {
+    font-size: 15px;
+}
+
+h4.card-title {
+    text-transform: uppercase;
+}
+
+.card>.list-group {
+    border: white;
+}
+
+/* Profile */
+.list-group {
+    border-color: orange;
+    border: 2px;
+    padding-left: 0;
+}
+
+
+/* sign up */
+
+#form-row {
+    height: 10%;
+}
+
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+    max-height: auto;
+}
